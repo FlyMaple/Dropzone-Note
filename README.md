@@ -117,19 +117,19 @@ Dropzone 有隱性創建的功能，會在 contentLoaded 的時後將所有 clas
 
 
 # Impl
-* aaa: 處理縮圖的大小縮放
-  ```
+* resize: 處理縮圖的大小縮放
+	```
 	resize: function (file) {
 		return {
-		   optHeight: 120, /* 透過 thubmnailHeight 算出比例高 */
-		   optWidth: 120,  /* 透過 thubmnailWidth 算出比例寬 */
-		   srcHeight: file.height,
-		   srcWidth: file.width,
-		   srcX: 120,
-		   srcY: 0
+			optHeight: 120, /* 透過 thubmnailHeight 算出比例高 */
+			optWidth: 120,  /* 透過 thubmnailWidth 算出比例寬 */
+			srcHeight: file.height,
+			srcWidth: file.width,
+			srcX: 120,
+			srcY: 0
 		};
 	}
-	  ```
+	```
 
 * renameFilename: 好像是在做任何處理前先將上傳上來的檔名做 rename 處理
    ``` JS
