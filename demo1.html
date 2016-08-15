@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/dropzone/dist/basic.css">
+    <link rel="stylesheet" href="js/dropzone/dist/dropzone.css">
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/dropzone/dist/dropzone.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        console.log('inner');
+        /*
+        */
+        Dropzone.options.myAwesomeDropzone = {
+            init: function () {
+                this.on('dragstart', function () {
+                    console.log('dragstart');
+                });
+                this.on('dragend', function () {
+                    console.log('dragend');
+                });
+
+                this.on('addedfile', function () {
+                    console.log('addedfile');
+                    console.log(arguments);
+                });
+                this.on('removedfile', function () {
+                    console.log('removedfile');
+                    console.log(arguments);
+                });
+                this.on('thumbnail', function () {
+                    console.log('thumbnail');
+                    console.log(arguments);
+                });
+                this.on('error', function () {
+                    console.log('error');
+                    console.log(arguments);
+                });
+                this.on('processing', function () {
+                    console.log('processing');
+                    console.log(arguments);
+                });
+                this.on('uploadprogress', function () {
+                    console.log('uploadprogress');
+                    console.log(arguments);
+                });
+                this.on('sending', function () {
+                    console.log('sending');
+                    console.log(arguments);
+                });
+                this.on('success', function () {
+                    console.log('success');
+                    console.log(arguments);
+                });
+                this.on('complete', function () {
+                    console.log('complete');
+                    console.log(arguments);
+                });
+                this.on('canceled', function () {
+                    console.log('canceled');
+                    console.log(arguments);
+                });
+                this.on('maxfilesreached', function () {
+                    console.log('maxfilesreached');
+                    console.log(arguments);
+                });
+                this.on('maxfilesexceeded', function () {
+                    console.log('maxfilesexceeded');
+                    console.log(arguments);
+                });
+                this.on('reset', function () {
+                    console.log('reset');
+                    console.log(arguments);
+                });
+                this.on('queuecomplete', function () {
+                    console.log('queuecomplete');
+                    console.log(arguments);
+                });
+            }
+        };
+        //  var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+        // $("div#myId").dropzone({ url: "/file/post" });
+    </script>
+</head>
+<body>
+    <form id="my-awesome-dropzone" action="/target" class="dropzone"></form>
+
+    <div id="myForm" action="/" class=""></div>
+
+    <div class="container dropzone-previews"></div>
+</body>
+</html>
