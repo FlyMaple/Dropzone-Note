@@ -2,6 +2,9 @@
 
 Dropzone 有隱性創建的功能，會在 contentLoaded 的時後將所有 classname 為 dropzone 的 HTML DOM 做初始化動作
 
+# 範例
+* 獲取隱性初始化的 dropzone 物件: `Dropzone.forElement(selector);`
+
 # Options
 * Dropzone.autoDiscover: boolean (default: true)，控制自動初始化  
     * ( 若要控制指定的 DOM 不要自動初始化: `Dropzone.options.myAwesomeDropzone = false` )
@@ -76,7 +79,7 @@ Dropzone 有隱性創建的功能，會在 contentLoaded 的時後將所有 clas
 
 * autoProcessQueue: 控制是否自動上傳 ( default: true )，若設為 false 要手動執行 `myDropzone.processQueue();`
 
-* previewTemplate: 有制式的 DOM 階層格式，用於客製自己的預覽圖 DOM 架構
+* previewTemplate: 有制式的 DOM 階層格式，用於客製自己的預覽圖 DOM 架構，每個版本的 template 不一樣，直接從 source 找出最新的加以修改
 	``` HTML
     <div class="dz-preview dz-file-preview">
        <div class="dz-details">
@@ -117,7 +120,7 @@ Dropzone 有隱性創建的功能，會在 contentLoaded 的時後將所有 clas
 
 
 # Impl
-* resize: 處理縮圖的大小縮放
+* resize: 處理縮圖的大小縮放，單純圖片大小，他的容器要覆寫 css 檔
 	```
 	resize: function (file) {
 		return {
